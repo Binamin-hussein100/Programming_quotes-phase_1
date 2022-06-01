@@ -1,0 +1,34 @@
+.card{
+    padding: 3%;
+    margin: 1%;
+    background-image: radial-gradient();
+    background: rgb(225, 217, 192);
+    border-radius: 0.4em;
+    box-shadow: 0.3em 0.3em 0.7em #00000015;
+    transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: rgb(250, 250, 250) 0.2em solid;
+    
+}
+body{
+    background-color: rgb(227, 216, 202);
+}
+
+.card:hover {
+    border: #707d90 0.2em solid;
+    margin-left: 3%;
+   }
+
+h1{
+    text-align: center;
+    text-transform:uppercase;
+    font-size: 500%;
+    font-weight: bolder;
+}
+
+span{
+    background-color: rgb(223, 220, 187);
+    padding: 6%;
+    border-radius: 50%;
+    border: blue solid 1px;
+}
+
