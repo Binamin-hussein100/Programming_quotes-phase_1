@@ -2,11 +2,6 @@
 
 A web app that consumes a programming quotes API. 
 
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-
 ## TECHNOLOGIES USED
 
 # HTML
