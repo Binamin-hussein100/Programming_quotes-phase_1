@@ -4,10 +4,10 @@ A web app that consumes a programming quotes API.
 
 ## TECHNOLOGIES USED
 
-# HTML
-# CSS
-# JAVASCRIPT
-# POSTMAN
+ HTML
+ CSS
+ JAVASCRIPT
+ POSTMAN
 
 ## Getting Started
 
