@@ -2,8 +2,9 @@ function getQuotes(){
     fetch("https://programming-quotes-api.herokuapp.com/quotes")
     .then((bigData)=> bigData.json())
     .then((data)=>{
-        data.slice(1,101)
-        data.forEach((dta)=>singleQuote(dta))
+        let newdt = cutOff(data.reverse())
+        console.log(newdt)
+        newdt.forEach((dta)=>singleQuote(dta))
     })
 
 }
@@ -12,6 +13,9 @@ function getQuotes(){
 function cutOff(x){
     return x.slice(1,10)
 }
+
+
+
 
 function singleQuote(quote){
     let card =  document.createElement("li")
@@ -22,14 +26,24 @@ function singleQuote(quote){
             <br>
             <p>${quote.author}</p>
             <div>
-                <button class='btn'>Upvote <span>1</span></button>
-                <button class='btn' >DownVote <span>1</span></button>
+                <button  class='btn'>Edit </button>
+                <button onClick="deleteQuote(${quote})" id="delete" class='btn' >Delete </button>
             </div>
         </div>
     `
  
     document.querySelector("#singlq").appendChild(card)
+
 }
+
+const deleteQuote = () =>{
+
+    console.log('qt')
+    // fetch(`https://programming-quotes-api.herokuapp.com/quotes/${quote.id}`,{
+    //     method:"DELETE"
+    // })
+}
+
 function postQuote(data){
     fetch("https://programming-quotes-api.herokuapp.com/quotes",{
         method:"POST",
@@ -39,7 +53,7 @@ function postQuote(data){
         }
     })
     .then((res)=>res.json())
-    console.log((q)=>console.log(q))
+    // .then((data))
 }
 
 document.querySelector("#quoteForm").addEventListener('submit',submitData)
@@ -47,8 +61,8 @@ document.querySelector("#quoteForm").addEventListener('submit',submitData)
 function submitData(e){
         e.preventDefault()
         let newQuote = {
-            author:e.target.author.value(),
-            en:e.target.en.value()
+            author:e.target.author.value,
+            en:e.target.quote.value
         }
         console.log(newQuote)
         singleQuote(newQuote )
